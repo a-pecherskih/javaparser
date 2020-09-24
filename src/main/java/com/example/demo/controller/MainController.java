@@ -1,6 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.GetTypeOfReference;
 import com.example.demo.service.LexicalPreservationComplete;
+import com.example.demo.service.ResolveMethodCalls;
+import com.example.demo.service.ResolveTypeInContext;
+import com.example.demo.simple.UsingTypeSolver;
 import com.example.demo.visitor.CommentReporterComplete;
 import com.example.demo.visitor.ModifyingVisitorComplete;
 import com.example.demo.visitor.PrettyPrintComplete;
@@ -57,7 +61,27 @@ public class MainController {
     }
 
     @GetMapping("/7")
-    public void test7(LexicalPreservationComplete lpc) throws FileNotFoundException {
+    public void test7(LexicalPreservationComplete lpc) {
         lpc.main();
+    }
+
+    @GetMapping("/8")
+    public void test8(GetTypeOfReference gtr) throws FileNotFoundException {
+        gtr.main();
+    }
+
+    @GetMapping("/9")
+    public void test9(UsingTypeSolver uts) {
+        uts.main();
+    }
+
+    @GetMapping("/10")
+    public void test10(ResolveTypeInContext rtc) throws Exception {
+        rtc.main();
+    }
+
+    @GetMapping("/11")
+    public void test11(ResolveMethodCalls rmc) throws Exception {
+        rmc.main();
     }
 }
